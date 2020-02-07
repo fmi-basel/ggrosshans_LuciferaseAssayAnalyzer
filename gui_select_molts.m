@@ -111,7 +111,7 @@ function loadData_Callback(hObject, eventdata, handles)
 
 warning off
 %Load luciferase data
-[filename,filepath]=uigetfile('','Select Luciferase Data ');
+[filename,filepath]=uigetfile('*.*','Select Luciferase Data ');
 
 %remove extensions from file name
 idx = strfind(filename,'.');
@@ -191,17 +191,10 @@ else
     end
     
     handles.Molt = ones(4,2,length(handles.samples));
-    % annotated is a logical flag indication if a sample has been annotated
-    handles.annotated = logical(zeros(size(handles.samples)));
     
-    %do outlier detection
-    %handles.valid = logical(ones(size(handles.samples)));
-    %load('\\argon\meeumilo\Milou - Projects\Luciferase\Luciferase assay experiments\DTW outlier detection\Template','Template_worm')
-    %handles.valid = outlier_detection_new(Template_worm,X)<20;%juiste treshhold nog bepalen!
-        
-    %handles.isControlSample = logical(zeros(size(handles.samples)));
-    
-    
+    handles.annotated = logical(zeros(size(handles.samples)));% annotated is a logical, indicating whether a sample has been annotated
+    handles.valid = logical(ones(size(handles.samples)));% valid is a logical, indicating whether a sample is valid or not 
+  
 end
 %plot first luminescence data
 handles.uniq_samples = unique(handles.samples);
