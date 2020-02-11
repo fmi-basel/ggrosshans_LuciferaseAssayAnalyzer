@@ -53,7 +53,7 @@ function varargout = gui_select_molts(varargin)
 
 % Edit the above text to modify the response to help gui_select_molts
 
-% Last Modified by GUIDE v2.5 10-Feb-2020 15:52:17
+% Last Modified by GUIDE v2.5 11-Feb-2020 12:50:04
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -204,7 +204,8 @@ handles.uniq_samples = unique(handles.samples);
     set(handles.strain2Lumi,'String',handles.uniq_samples);
     set(handles.strain1Lumi,'Value',1);
     set(handles.strain2Lumi,'Value',2);
-
+    set(handles.yMax,'Value',2000);
+    
 %plot data
 handles.current_sample=1;
 handles.ymaxlim = 1.1*max(handles.X(:,1));
@@ -663,9 +664,7 @@ hold on;plot(t(ind),handles.X(ind,c),'g.');
 handles.current_sample = c;
 ind=1:handles.Hatch(c);
 hold on; plot(t(ind),handles.X(ind,c),'r.');
-%axis([1 t(end) 0 3000]);
-%axis([1 t(end) 0 1.1*max(handles.X(:,c))]);
-axis([1 t(end) 0 handles.ymaxlim]);
+axis([1 t(end) 0 handles.yMax.Value]);
 
 
 function GoTo_Callback(hObject, eventdata, handles)
@@ -1130,12 +1129,11 @@ function yMax_Callback(hObject, eventdata, handles)
     %the data for the current sample
 
 c = handles.current_sample;
+
 if ~isnan(str2double(eventdata.Source.String))
-     %handles.axis_lim = [1 t(end) 0 str2double(eventdata.Source.String)];
-     handles.ymaxlim = str2double(eventdata.Source.String);
+     handles.yMax.Value = str2double(eventdata.Source.String);
 else
-     %handles.axis_lim = [1 t(end) 0 1.1*max(handles.X(:,c))];
-     handles.ymaxlim = 1.1*max(handles.X(:,c));
+     handles.yMax.Value = 1.1*max(handles.X(:,c));
 end
 guidata(hObject, handles);
 plot_data(handles)
@@ -1399,3 +1397,6 @@ function strain2Lumi_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+
