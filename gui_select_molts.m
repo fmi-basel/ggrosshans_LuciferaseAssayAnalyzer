@@ -1269,8 +1269,8 @@ function StatLuminescence_Callback(hObject, eventdata, handles)
     
 
     y=zeros(size(handles.samples));
-    strain1 = handles.Strain1Selection.String{handles.Strain1Selection.Value};
-    strain2 = handles.Strain2Selection.String{handles.Strain2Selection.Value};
+    strain1 = handles.strain1Lumi.String{handles.strain1Lumi.Value};
+    strain2 = handles.strain2Lumi.String{handles.strain2Lumi.Value};
     y(strcmp(handles.samples,strain1))=1;
     y(strcmp(handles.samples,strain2))=2;
     
