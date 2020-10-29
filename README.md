@@ -153,5 +153,5 @@ The output files of this application include:
 
 # (6) References/Citation
 
-[Olmedo, et al. Genetics, 2015](https://www.genetics.org/content/201/2/443)
+[Olmedo, et al. Genetics, 2015](https://www.genetics.org/content/201/2/443)  
 [Meeuse, et al. Molecular Systems Biology, 2020](https://www.embopress.org/doi/full/10.15252/msb.20209498)
