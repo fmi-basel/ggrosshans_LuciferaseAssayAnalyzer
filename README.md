@@ -69,6 +69,7 @@ It is important that the format of both files matches exactly the description be
 
 ## (a) Luminometer data file
 For a data file to be compatible with the Luciferase Assay Analyzer, it is important that the data and the export setting are correct.
+![MikroWin](/Images_README/MikroWin.png)
 - For running a time course experiment on the luminometer, change the settings: 
 **settings** -> **measurement** -> **repeated**: 
 	- Total time (total duration assay)
