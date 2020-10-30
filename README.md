@@ -36,6 +36,7 @@ To convert the MATLAB code into a standalone application, use the MATLAB Applica
 The Application Compiler packages MATLAB programs into applications that can run outside of MATLAB. 
 Detailed information on the Application Compiler App can be found on the [mathworks website](https://nl.mathworks.com/help/compiler/applicationcompiler-app.html)
 1. Open the Application Compiler App: enter `applicationCompiler` in the MATLAB command prompt
+![ApplicationCompiler](/Images_README/ApplicationCompiler.png)
 2. Add main file: gui_select_molts.m
 3. Change the **title** to LuciferaseAssayAnalyzer_windows or LuciferaseAssayAnalyzer_mac and choose the appropriate **version**. 
 Note: for creating the Luciferase Assay Analyzer executable for windows the compiling needs to be done on a windows computer, while for creating the Luciferase Assay Analyzer application for mac, the compiling needs to be done on a mac computer. 
